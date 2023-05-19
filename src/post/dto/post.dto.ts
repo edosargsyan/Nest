@@ -1,5 +1,5 @@
 export class PostDto {
-    id:string
+    _id:string
     readonly content:string
     readonly userName:string
 }

@@ -3,19 +3,20 @@ import { PostDto } from "./dto/post.dto"
 import { InjectModel } from "@nestjs/mongoose"
 import {Postt, PostDocument} from './schemas/posts.schema'
 import { Model } from "mongoose"
+import mongoose from "mongoose"
 import { UpdateDto } from "./dto/update.dto"
 @Injectable()
 export class PostService{
-    constructor(@InjectModel(Postt.name) private postModel:Model<PostDocument>){}
+    constructor(@InjectModel(Postt.name) private postModel:mongoose.Model<PostDocument>){}
     async getAll():Promise<Postt[]>{
-        return this.postModel.find().exec()
+        return this.postModel.find()
     }
    async getOne(id:string){
        return this.postModel.findById(id)
     }
     async create(post:PostDto):Promise<Postt>{
-      const newPost = new this.postModel(PostDto)
-      return newPost.save()
+      const newPost = this.postModel.create(post)
+      return newPost
     }
     async remove(id:string):Promise<Postt>{
          return this.postModel.findByIdAndRemove(id)

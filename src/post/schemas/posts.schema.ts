@@ -4,10 +4,10 @@ export type PostDocument = Postt & Document
 @Schema()
 export class Postt{
   @Prop()
-  content:String
+  content:string
 
   @Prop()
-  userName:String
+  userName:string
 }
 
 export const PostSchema = SchemaFactory.createForClass(Postt);

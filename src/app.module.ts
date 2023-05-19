@@ -6,8 +6,9 @@ import { PostService } from './post/post.service';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [PostModule,
-    MongooseModule.forRoot('mongodb+srv://sargsyane628:Edo778899@cluster0.xsfuuqs.mongodb.net/?retryWrites=true&w=majority')
+  imports: [
+    MongooseModule.forRoot('mongodb+srv://sargsyane628:Edo778899@cluster0.xsfuuqs.mongodb.net/?retryWrites=true&w=majority'),
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
