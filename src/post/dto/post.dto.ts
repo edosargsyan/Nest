@@ -1,5 +1,6 @@
 export class PostDto {
     _id:string
-    readonly content:string
-    readonly userName:string
+    readonly name:string
+    readonly lastName:string
+    readonly age:number
 }

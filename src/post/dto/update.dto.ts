@@ -1,4 +1,5 @@
 export class UpdateDto {
-    readonly content:string
-    readonly userName:string
+    readonly name:string
+    readonly lastName:string
+    readonly age:number
 }
